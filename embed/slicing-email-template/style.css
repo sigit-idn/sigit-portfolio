@@ -1,0 +1,457 @@
+:root {
+    --blue: #74D1FF;
+    --dark: #5BA4C9;
+    --red: #F17171;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.295);
+    --inner-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.295);
+    --glow: 0 8px 8px -3px rgba(117, 209, 255, 0.486);
+    --glow-red: 0 8px 8px -3px hsla(0, 82%, 69%, 0.5);
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+    font-size: calc(11px + .35vw);
+    background-color: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    transition: .5s;
+    box-sizing: border-box;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: calc(15px + 1.2vw);
+}
+
+li {
+    list-style: none;
+}
+
+nav {
+    display: flex;
+    padding: 0 calc(7px + 3vw);
+    padding-top: 10px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 3;
+    color: #333333;
+    background-color: #fff;
+}
+
+nav div {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    padding: 15px 25px;
+    text-transform: uppercase;
+    color: #333333;
+    border-bottom: 3px solid var(--blue);
+}
+
+.nav-active, nav a:hover {
+    border-color: var(--red);
+}
+
+nav>span {
+    display: flex;
+    align-items: center;
+}
+
+nav strong {
+    margin-left: 20px;
+    font-size: calc(15px + .7vw);
+    color: #333333;
+}
+
+#home {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 30px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+#home h1 span {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+#home h1 span:last-child,
+#home h1 span:nth-last-child(2) {
+    color: var(--red);
+}
+
+.siplah {
+    color: #fff;
+    height: 60px;
+    background-color: var(--red);
+    width: 280px;
+    border-radius: 8px;
+    padding: 0 10px;
+    box-shadow: var(--glow-red);
+    overflow: hidden;
+    text-align: center;
+}
+
+.siplah:hover {
+    background-color: #fff;
+    /* height: 50px; */
+}
+
+
+.siplah a,
+.siplah:hover p {
+    /* display: none; */
+    opacity: 0;
+}
+
+.siplah:hover a,
+.siplah p {
+    font-size: 20px;
+    opacity: 1;
+    margin: 0 2px;
+}
+
+.siplah p {
+    margin-top: 18px;
+}
+
+.siplah:hover p {
+    margin-top: -15px;
+}
+
+.siplah img {
+    width: 120px;
+}
+
+.siplah img:hover {
+    transform: scale(1.05);
+}
+
+.background {
+    transform: rotateY(180deg);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: calc(80px + 50vw);
+    z-index: -3;
+}
+
+.more {
+    position: absolute;
+    display: flex;
+    width: max-content;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    bottom: -80px;
+    background-color: #fff;
+    right: 50%;
+    transform: translateX(50%);
+    font-weight: 700;
+    color: #333333 !important;
+    z-index: 1;
+    opacity: 0;
+}
+
+.more ul {
+    margin: calc(3px + .5vw) calc(1px + 3.4vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.more i {
+    font-size: calc(19px + 2vw);
+}
+
+.more li:last-child {
+    margin-top: 8px;
+    font-size: calc(12px + .3vw);
+}
+
+#layanan {
+    position: relative;
+    background-image: url(img/janko-ferlic-sfL_QOnmy00-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    background-color: #000000a6;
+    box-shadow: var(--inner-shadow);
+    padding: 120px 0px 80px;
+    text-align: center;
+}
+
+.overlay h1, body > h1 {
+    padding: 12px;
+    border-bottom: 6px dotted #fff;
+    width: max-content;
+    margin: auto;
+}
+.overlay li {
+    margin: 15px 0 0;
+}
+
+.overlay li:nth-child(2) {
+    font-weight: 700;
+    font-size: .8em;
+}
+
+.overlay ul {
+    width: 230px;
+    padding: 10px;
+}
+
+.overlay div {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    flex-wrap: wrap;
+}
+
+#contact {
+    margin-top: 30px;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap-reverse;
+}
+
+body > h1 {
+    border-color: #333333;
+    margin: 50px auto;
+}
+
+form {
+    width: 40%;
+    min-width: 310px;
+    position: relative;
+    background-color: #fff;
+    /* transform: scale(0); */
+    transition: all .5s ease;
+    border-radius: 20px;
+    /* width: calc(400px + 8vw); */
+    /* margin: auto; */
+    padding: calc(21px + 2vw);
+    display: flex;
+    flex-direction: column;
+}
+
+form * {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+
+form textarea {
+    border-radius: 5px;
+    border: 1.5px solid #dadada;
+    margin-bottom: 20px;
+}
+
+form textarea:focus {
+    border: 1.5px solid #e463a6;
+}
+
+form input {
+    border-bottom: 1.5px solid #dadada;
+    margin-bottom: 20px;
+}
+
+form input:focus {
+    border-bottom: 1.5px solid #e463a6;
+}
+
+button {
+    color: #fff;
+    background-color: var(--blue);
+    width: max-content;
+    padding: 8px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: var(--glow);
+}
+
+button:hover {
+    background-color: var(--dark);
+}
+
+.whatsapp {
+    background-color: #25D366;
+    box-shadow: 0 2px 8px #25d3659c;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    padding: 20px;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    padding: 120px calc(21px + 2vw);
+    padding-bottom: 50px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+    position: relative;
+    box-shadow: var(--inner-shadow);
+    flex-wrap: wrap;
+}
+
+footer ul {
+    min-width: 200px;
+    width: 30%;
+}
+
+footer li:first-child {
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+footer ul:last-child img {
+    width: calc(78px + 5vw);
+}
+
+footer >img {
+    position: absolute;
+    top: 50px;
+}
+
+footer i {
+    color: var(--blue);
+    width: 20px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+@media (max-width: 950px) {
+
+    nav > div {
+        display: none;
+    }
+
+    .burger {
+        /* position: fixed; */
+        right: 20px;
+        bottom: 8px;
+        width: 50px !important;
+        height: 50px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        /* background: #e463a6; */
+        z-index: 3;
+        border-radius: 50%;
+        padding: 0 !important;
+        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.205); */
+    }
+
+    .burger-x>span:first-child {
+        transform: rotate(45deg) translateY(-4px) translateX(2px);
+        transform-origin: 0;
+    }
+
+    .burger-x>span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-x>span:last-child {
+        transform: rotate(-45deg) translateY(4px) translateX(2px);
+        transform-origin: 0;
+    }
+
+    .burger span {
+        width: 25px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: var(--blue);
+        margin: 2.8px 0;
+        transition: all .5s ease;
+    }
+
+    .links-show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #fff;
+        padding: 20px;
+    }
+
+    #contact form {
+        width: 100vw;
+    }
+
+    footer ul {
+        width: 90vw;
+    }
+
+    footer ul:nth-child(3) {
+        margin: 20px 0;
+    }
+
+    .more ul {
+        width: min-content;
+    }
+
+}
+
+.fade {
+    opacity: 0;
+}
+
+.fadeup {
+    transform: translateY(-25px) scale(.5);
+}
+
+.fadedown {
+    transform: translateY(25px);
+}

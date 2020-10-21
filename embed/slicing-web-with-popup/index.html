@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <H1>April 2020</H1>
+            <div class="item">
+                <p id=”date“>22.03.2020</p>
+                <p id=”titlePlace“>John Fischer</p>
+                <p id=”amount“>3.200</p>
+            </div>
+            <div class="item">
+                <p id=”date“>22.03.2020</p>
+                <p id=”titlePlace“>Eliot Weiden</p>
+                <p id=”amount“>1.600</p>
+            </div>
+            <div class="item">
+                <p id=”date“>22.03.2020</p>
+                <p id=”titlePlace“>Sofia Gina</p>
+                <p id=”amount“>4.500</p>
+            </div>
+        </div>
+        <div class="content">
+            <H1>März 2020</H1>
+            <div class="item">
+                <p id=”date“>22.03.2020</p>
+                <p id=”titlePlace“>Milo Grinaldi</p>
+                <p id=”amount“>1.200</p>
+            </div>
+            <div class="item">
+                <p id=”date“>22.03.2020</p>
+                <p id=”titlePlace“>Fanel Mirandi</p>
+                <p id=”amount“>3.200</p>
+            </div>
+            <div class="item">
+                <p id=”date“>22.03.2020</p>
+                <p id=”titlePlace“>Greogir Minini</p>
+                <p id=”amount“>5.100</p>
+            </div>
+        </div>
+        <div class="content">
+            <H1> Februar 2020</H1>
+            <div class="item">
+                <p id=”date“>10.04.2022</p>
+                <p id=”titlePlace“>Johann Fischer</p>
+                <p id=”amount“>2.345</p>
+            </div>
+            <div class="item">
+                <p id=”date“>10.04.2022</p>
+                <p id=”titlePlace“>Jo Mainer</p>
+                <p id=”amount“>1.430</p>
+            </div>
+            <div class="item">
+                <p id=”date“>10.04.2022</p>
+                <p id=”titlePlace“>Fing Gross</p>
+                <p id=”amount“>5.100</p>
+            </div>
+        </div>
+        <div class="content">
+            <H1> Januar 2020</H1>
+            <div class="item">
+                <p id=”date“>10.04.2022</p>
+                <p id=”titlePlace“>Johann Fischer</p>
+                <p id=”amount“>1.245</p>
+            </div>
+            <div class="item">
+                <p id=”date“>10.04.2022</p>
+                <p id=”titlePlace“>Mello Grande</p>
+                <p id=”amount“>1.430</p>
+            </div>
+            <div class="item">
+                <p id=”date“>10.04.2022</p>
+                <p id=”titlePlace“>Fing Gross</p>
+                <p id=”amount“>5.100</p>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        </div>
+    </div>
+    <div id="overlay" class="overlay">
+        <form action="" method="POST">
+            <h1>Erstellen</h1>
+            <label for="address">Adresse</label>
+            <textarea name="address" id="address" cols="30" rows="4"></textarea>
+            <label for="desc">Beschreibung</label>
+            <input type="text" name="desc" id="desc">
+            <label for="amount">Betrag</label>
+            <div style="position: relative;">
+                <input type="text" name="amount" id="amount"> <label for="amount" class="placeholder">EUR</label>
+            </div>
+            <p>Hinzufügen</p>
+            <button type="submit">Fertig</button>
+        </form>
+    </div>
+
+    <a class="plus-button" href="#">
+        <div class="cross"><span></span><span></span></div>
+        <p>Erstellen</p>
+    </a>
+
+    <script>
+        const plusButton = document.querySelector('.plus-button');
+        const item = document.querySelectorAll('.item');
+
+        for (let i = 0; i < item.length; i++) {
+            item[i].addEventListener('click', function () {
+                item[i].classList.toggle('selected');
+            }
+            )
+        }
+
+        let closeText = true;
+
+        plusButton.addEventListener('click', function () {
+            document.getElementById('overlay').classList.toggle('show');
+            plusButton.classList.toggle('close');
+
+            if (closeText == true) {
+                plusButton.querySelector('p').innerHTML = "Schließen";
+                plusButton.style.boxShadow = '0 8px 10px #dc143c5b'
+                closeText = false;
+            } else {
+                plusButton.querySelector('p').innerHTML = "Erstellen";
+                plusButton.style.boxShadow = '0 8px 10px #157dfb85'
+                closeText = true;
+            }
+
+            setTimeout(() => {
+                document.getElementById('address').focus();
+                document.getElementById('address').select();
+            }, 85);
+
+            console.log (closeText);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

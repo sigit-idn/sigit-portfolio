@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200&display=swap"
+        rel="stylesheet">
+    <title>TUSZAPASENCASA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bg-top">
+        <img src="img/Vector 1.png" alt=""><img src="img/Vector 2.png" alt="">
+    </div>
+    <nav>
+        <a onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="justify-self: start;"><img
+                src="img/logo.png"><span style="margin-left: 8px;">TUSZAPASENCASA</span></a>
+        <div class="links">
+            <a onclick="window.innerWidth >= 992 ? window.scrollTo({top: 710, behavior: 'smooth'}) : null">Acerca
+                de</a>
+            <a
+                onclick="window.innerWidth >= 992 && innerWidth < 1600 ? window.scrollTo({top: 1325, behavior: 'smooth'}) : window.scrollTo({top: 1543, behavior: 'smooth'})">Galería</a>
+            <a
+                onclick="window.innerWidth >= 992 && innerWidth < 1600 ? window.scrollTo({top: 2319, behavior: 'smooth'}) : window.scrollTo({top: 2642, behavior: 'smooth'})">Contacto</a>
+        </div>
+        <div class="burger"
+            onclick="this.classList.toggle('burger-x'); document.querySelector('.links').classList.toggle('links-show')">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div id="home">
+        <div class="home-content">
+            <div class="text">
+                <h1>Nike Air Zoom</h1>
+                <p>Es bonita y ligera. Diseñada para tener una suave pisada al correr de la forma más rápida. Consigue
+                    todo tu potencial gracias a Nike Air Zoom.</p>
+                <div><a href="#">Comprar ahora</a><a href="#">Leer más</a></div>
+            </div>
+            <img class="nike-img" src="img/nike.png">
+        </div>
+
+    </div>
+    <div id="about">
+        <div class="about-content">
+            <img class="nike2-img" src="img/nike2.png">
+            <div class="text">
+                <h1>Diseño ergonómico y cómodo</h1>
+                <p>Su ergonomía hará que las pisadas sean suaves y cómodas al tacto. Podrémos aguantar más a la hora de
+                    correr debido a que ya no se presentarán posibles molestias a la hora de pisar. Su bonito diseño se
+                    adaptará rápidamente a tu pie.</p>
+                <a href="#">Comprar ahora</a>
+            </div>
+        </div>
+    </div>
+    <div id="gallery">
+        <h1>Galería</h1>
+        <div class="gallery-items">
+            <div><span></span><img src="img/shoe1.png"></div>
+            <div><span></span><img src="img/shoe2.png"></div>
+            <div><span></span><img src="img/shoe3.png"></div>
+            <div><span></span><img src="img/shoe4.png"></div>
+            <div><span></span><img src="img/shoe5.png"></div>
+            <div><span></span><img src="img/shoe6.png"></div>
+            <a style="height: max-content; display: block;" href="#">Comprar ahora</a>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="contact-content">
+
+            <form action="" method="post">
+                <h1>Contacto</h1>
+                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Asunto">
+                <button>Comprar ahora</button>
+            </form>
+            <img class="nike3-img" src="img/nike3.png">
+        </div>
+    </div>
+
+    <footer>
+        <p>© tuszapasencasa.es | Todos los derechos reservados</p>
+        <a href=""><img src="img/media-icons.png"></a>
+    </footer>
+
+    <div class="bg-bottom">
+        <img src="img/Vector 3.png" alt=""><img src="img/Vector 4.png" alt="">
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

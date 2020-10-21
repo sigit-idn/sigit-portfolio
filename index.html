@@ -1,0 +1,495 @@
+<?php
+
+$connect = mysqli_connect('sql212.epizy.com','epiz_26241179', 'tksycvm5iY0N', 'epiz_26241179_sigit');
+
+
+if (mysqli_connect_errno()){
+    echo 'error';
+}
+
+$username = $_POST['username'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+if (isset($_POST['submit'])) {
+    
+    
+    mysqli_query($connect, "INSERT INTO message 
+            VALUES 
+            ('', '$username', '$email', '$message')");
+
+}
+
+?>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180270995-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-180270995-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigit Tri Nugroho - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">  -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500;800&display=swap" rel="stylesheet">  -->
+    <script src="https://kit.fontawesome.com/5db6df9848.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- FLOATING ELEMENTS -->
+
+    <nav>
+        <a
+            onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'}); pageIndex = 0; changeIndicator()">Sigit
+            Tri Nugroho</a>
+        <div class="link" style="margin-right: 30px;">
+            <a class="nav-active" onclick="document.getElementById('home').scrollIntoView({ behavior:'smooth'})">ホーム
+                <div class="underline"></div>
+            </a>
+            <a>スキル</a>
+            <a>ポートフォリオ </a>
+            <a>評価</a>
+            <!-- <a style="background-color: #e463a6e7 ; color: #fff;"
+                onclick="document.getElementById('overlay').classList.toggle('show')">お問合わせ</a>     -->
+        </div>
+    </nav>
+
+    <div class="burger"
+        onclick="this.classList.toggle('burger-x'); document.querySelector('nav').classList.toggle('links-show')">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <footer>
+        <div class="footer-left">
+            <img src="img/photo-rounded.png" alt="写真">
+
+            <ul style="margin: 10px;">
+                <li><i class="fas fa-map-marker-alt"></i><span>群馬県伊勢崎市鹿島町580−6丸山ハイツ203</span></li>
+                <li>
+                    <i class="fas fa-mobile"></i><span>080-2155-4647</span>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i><span>sigit.idn@gmail.com</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page-indicator">
+            <div class="indicator-title">
+                <p class="indicator-1 indicator-active">ホーム</p>
+                <p class="indicator-2">スキル</p>
+                <p class="indicator-3">ポートフォリオ</p>
+                <p class="indicator-4">評価</p>
+            </div>
+            <svg>
+                <circle cx="50" cy="50" r="30"></circle>
+                <circle cx="50" cy="50" r="30"></circle>
+            </svg>
+        </div>
+
+    </footer>
+
+    <!-- <a onclick="nextPage()" class="next-page"><i class="fas fa-chevron-circle-right"></i><br>スキル</a> -->
+    <a onclick="nextPage()" class="next-page"><span>スキル </span><i class="fas fa-chevron-circle-right"></i></a>
+    <a onclick="prevPage()" class="prev-page"></a>
+
+    <!-- END OF FLOATING ELEMENTS -->
+
+    <section id="home">
+        <div class="background-text">
+            <strong>SIGIT TRI NUGROHO</strong>
+            <strong style="background-position: center;">SIGIT TRI NUGROHO</strong>
+        </div>
+        <div class="title">
+            <p><span>シギット</span>トリ ヌグロホ</p>
+            <div>
+                <p class="typing"></p>
+                <div class="contacts">
+                    <a href="tel:08021554647"><i class="fas fa-mobile fa-2x"></i><span>080-2155-4647</span></a>
+                    <a href="mailto:sigit.idn@gmail.com"><i
+                            class="fas fa-envelope fa-2x"></i><span>sigit.idn@gmail.com</span></a>
+                    <a href="https://line.me/R/pi/shi_gito"><i class="fab fa-line fa-2x"></i><span>shi_gito</span></a>
+                </div>
+                <a onclick="document.getElementById('work').scrollIntoView({behavior: 'smooth'}); pageIndex = 2; changeIndicator();
+                ">ポートフォリオ <i class="fas fa-chevron-circle-right"></i></a>
+            </div>
+        </div>
+    </section>
+    <section id="skill">
+        <div class="background-text">
+            <strong>　　SKILL</strong>
+            <strong>SKILL　　</strong>
+        </div>
+        <ul class="computer fade fadedown">
+            <li>
+                <h3>デザイン</h3><br>
+            </li>
+            <li>
+                <p>Adobe Illustrator</p> <span class="back"> <span style="width: 75%" class="front"></span></span>
+            </li>
+            <li>
+                <p>Adobe Photoshop</p> <span class="back"> <span style="width: 65%" class="front"></span></span>
+            </li>
+            <li>
+                <p>Adobe XD</p> <span class="back"> <span style="width: 80%" class="front"></span></span>
+            </li>
+            <li>
+                <p>Figma</p> <span class="back"> <span style="width: 85%" class="front"></span></span>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <h3>フロントエンド</h3><br>
+            </li>
+            <li>
+                <p>HTML</p> <span class="back"> <span style="width: 85%" class="front"></span></span>
+            </li>
+            <li>
+                <p>CSS</p> <span class="back"> <span style="width: 90%" class="front"></span></span>
+            </li>
+            <li>
+                <p>Bootstrap</p> <span class="back"> <span style="width: 50%" class="front"></span></span>
+            </li>
+            <li>
+                <p>JavaScript</p> <span class="back"> <span style="width: 80%" class="front"></span></span>
+            </li>
+            <li>
+                <p>React JS</p> <span class="back"> <span style="width: 35%" class="front"></span></span>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <h3>バックエンド</h3><br>
+            </li>
+            <li>
+                <p>PHP</p> <span class="back"> <span style="width: 70%" class="front"></span></span>
+            </li>
+            <li>
+                <p>MySQL</p> <span class="back"> <span style="width: 65%" class="front"></span></span>
+            </li>
+            <li>
+                <p>Laravel</p> <span class="back"> <span style="width: 35%" class="front"></span></span>
+            </li>
+            <li>
+                <p>NodeJS</p> <span class="back"> <span style="width: 25%" class="front"></span></span>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <h3>日本語　(レベル：N3)</h3><br>
+            </li>
+            <li>
+                <p>聞き取り</p> <span class="back"> <span style="width: 85%" class="front"></span></span>
+            </li>
+            <li>
+                <p>会話</p> <span class="back"> <span style="width: 75%" class="front"></span></span>
+            </li>
+            <li>
+                <p>漢字読み</p> <span class="back"> <span style="width: 80%" class="front"></span></span>
+            </li>
+            <li>
+                <p>漢字書き</p> <span class="back"> <span style="width: 35%" class="front"></span></span>
+            </li>
+            <li>
+                <p>読解</p> <span class="back"> <span style="width: 70%" class="front"></span></span>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <h3>英語　(TOEFL-LIKE：467点)</h3><br>
+            </li>
+            <li>
+                <p>聞き取り</p> <span class="back"> <span style="width: 80%" class="front"></span></span>
+            </li>
+            <li>
+                <p>会話</p> <span class="back"> <span style="width: 70%" class="front"></span></span>
+            </li>
+            <li>
+                <p>読解</p> <span class="back"> <span style="width: 85%" class="front"></span></span>
+            </li>
+        </ul>
+    </section>
+    <section id="work">
+        <div class="background-text">
+            <strong>PORTFOLIO</strong>
+            <strong>PORTFOLIO</strong>
+        </div>
+        <div class="fade port-card">
+            <div class="card-info">
+                <div class="water"></div>
+                <a class="back-button"><i class="fas fa-chevron-circle-up"></i>戻る</a>
+                <img src="img/ss1.png" alt="Tuszapasencasa">
+                <a class="detail">詳細 <br><i class="fas fa-chevron-circle-down"></i></a>
+                <div class="info">
+                    <h2>Tuszapasencasa</h2>
+                    <ul>
+                        <li><small>種類</small>
+                            <p>ランディングページ</p>
+                        </li>
+                        <li><small>依頼内容</small>
+                            <p>UIデザインをHTMLにコーディング</p>
+                        </li>
+                        <li><small>依頼人</small>
+                            <p>スペイン国籍</p>
+                        </li>
+                        <li><small>UIデザイン</small>
+                            <p>figma</p>
+                        </li>
+                        <li><small>コーディング</small>
+                            <p>HTML, CSS, JavaScript</p>
+                        </li>
+                    </ul>
+                    <a href="">ソースコード</a>
+                </div>
+                <div class="mockup">
+                    <div class="laptop">
+                        <div class="laptop-screen">
+                            <div class="laptop-camera"></div>
+                            <embed src="embed/slicing-web-TUSZAPASENCASA/index.html" type="text/html">
+                        </div>
+                        <div class="laptop-board">
+                            <div class="touchpad"></div>
+                        </div>
+                    </div>
+                    <div class="phone">
+                        <div class="phone-top">
+                            <span class="bar">
+                            </span>
+                            <span class="circle"></span>
+                        </div>
+                        <div class="screen">
+                            <embed src="embed/slicing-web-TUSZAPASENCASA/index.html" type="text/html">
+                        </div>
+                    </div>
+                </div>
+                <p class="mockup-interaction">※モックアップ画面でご操作ください</p>
+            </div>
+        </div>
+        <div class="fade port-card">
+            <div class="card-info">
+                <div class="water"></div>
+                <a class="back-button"><i class="fas fa-chevron-circle-up"></i>戻る</a>
+                <img src="img/ss2.png" alt="Fyber Offer Wall">
+                <a class="detail">詳細 <br><i class="fas fa-chevron-circle-down"></i></a>
+                <div class="info">
+                    <h2>Fyber Offer Wall</h2>
+                    <ul>
+                        <li><small>種類</small>
+                            <p>オファーページ</p>
+                        </li>
+                        <li><small>依頼内容</small>
+                            <p>UIデザインをHTMLにコーディング、<br>API接続</p>
+                        </li>
+                        <li><small>依頼人</small>
+                            <p>インド国籍</p>
+                        </li>
+                        <li><small>UIデザイン</small>
+                            <p>JPG</p>
+                        </li>
+                        <li><small>コーディング</small>
+                            <p>HTML, CSS, JavaScript, JSON, PHP</p>
+                        </li>
+                    </ul>
+                    <a href="">ソースコード</a>
+                </div>
+                <div class="mockup">
+                    <div class="laptop">
+                        <div class="laptop-screen">
+                            <div class="laptop-camera"></div>
+                            <embed src="embed/fyber-offer-wall/index.php" type="text/html">
+                        </div>
+                        <div class="laptop-board">
+                            <div class="touchpad"></div>
+                        </div>
+                    </div>
+                    <div class="phone">
+                        <div class="phone-top">
+                            <span class="bar">
+                            </span>
+                            <span class="circle"></span>
+                        </div>
+                        <div class="screen">
+                            <embed src="embed/fyber-offer-wall/index.php" type="text/html">
+                        </div>
+                    </div>
+                </div>
+                <p class="mockup-interaction">※モックアップ画面でご操作ください</p>
+            </div>
+        </div>
+        <div class="fade port-card">
+            <div class="card-info">
+                <div class="water"></div>
+                <a class="back-button"><i class="fas fa-chevron-circle-up"></i>戻る</a>
+                <img src="img/ss3.png" alt="CV Permata Niza">
+                <a class="detail">詳細 <br><i class="fas fa-chevron-circle-down"></i></a>
+                <div class="info">
+                    <h2>CV Permata Niza</h2>
+                    <ul>
+                        <li><small>種類</small>
+                            <p>ランディングページ</p>
+                        </li>
+                        <li><small>依頼内容</small>
+                            <p>ウェブデザイン、<br>ウェブコーディング</p>
+                        </li>
+                        <li><small>依頼人</small>
+                            <p>インドネシア国籍</p>
+                        </li>
+                        <li><small>UIデザイン</small>
+                            <p>なし</p>
+                        </li>
+                        <li><small>コーディング</small>
+                            <p>HTML, CSS, JavaScript</p>
+                        </li>
+                    </ul>
+                    <a href="">ソースコード</a>
+                </div>
+                <div class="mockup">
+                    <div class="laptop">
+                        <div class="laptop-screen">
+                            <div class="laptop-camera"></div>
+                            <embed src="embed/slicing-email-template/index.html" type="text/html">
+                        </div>
+                        <div class="laptop-board">
+                            <div class="touchpad"></div>
+                        </div>
+                    </div>
+                    <div class="phone">
+                        <div class="phone-top">
+                            <span class="bar">
+                            </span>
+                            <span class="circle"></span>
+                        </div>
+                        <div class="screen">
+                            <embed src="embed/slicing-email-template/index.html" type="text/html">
+                        </div>
+                    </div>
+                </div>
+                <p class="mockup-interaction">※モックアップ画面でご操作ください</p>
+            </div>
+        </div>
+        <div class="fade port-card">
+            <div class="card-info">
+                <div class="water"></div>
+                <a class="back-button"><i class="fas fa-chevron-circle-up"></i>戻る</a>
+                <img src="img/ss4.png" alt="寄付ウェブサイト">
+                <a class="detail">詳細 <br><i class="fas fa-chevron-circle-down"></i></a>
+                <div class="info">
+                    <h2>寄付ウェブサイト</h2>
+                    <ul>
+                        <li><small>種類</small>
+                            <p>ウェブページ</p>
+                        </li>
+                        <li><small>依頼内容</small>
+                            <p>UIデザインをHTMLにコーディング</p>
+                        </li>
+                        <li><small>依頼人</small>
+                            <p>ドイツ国籍</p>
+                        </li>
+                        <li><small>UIデザイン</small>
+                            <p>PSD</p>
+                        </li>
+                        <li><small>コーディング</small>
+                            <p>HTML, CSS, JavaScript</p>
+                        </li>
+                    </ul>
+                    <a href="">ソースコード</a>
+                </div>
+                <div class="mockup">
+                    <div class="laptop">
+                        <div class="laptop-screen">
+                            <div class="laptop-camera"></div>
+                            <embed src="embed/slicing-web-with-popup/index.html"" type="text/html">
+                        </div>
+                        <div class="laptop-board">
+                            <div class="touchpad"></div>
+                        </div>
+                    </div>
+                    <div class="phone">
+                        <div class="phone-top">
+                            <span class="bar">
+                            </span>
+                            <span class="circle"></span>
+                        </div>
+                        <div class="screen">
+                            <embed src="embed/slicing-web-with-popup/index.html"" type="text/html">
+                        </div>
+                    </div>
+                </div>
+                <p class="mockup-interaction">※モックアップ画面でご操作ください</p>
+            </div>
+        </div>
+    </section>
+    <section id="review">
+        <div class="background-text">
+            <strong>REVIEW　</strong>
+            <strong>REVIEW　</strong>
+        </div>
+        <blockquote id="review-quote">
+            <p><i class="fas fa-quote-left"></i><span id="review-text">Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Asperiores sit ea sunt omnis aliquam obcaecati minima possimus nam distinctio quae
+                    eius, corporis facilis officia! Sint aliquam nam distinctio cum debitis.</span><i
+                    class="fas fa-quote-right"></i></p>
+            <p>ロレム・イプサム、略してリプサム lipsum ともいう）とは、出版、ウェブデザイン、グラフィックデザインなどの諸分野において使用されている典型的なダミーテキスト。書籍やウェブページや広告などのデザイン</p>
+            <div>
+                <img id="review-photo" src="img/profile-reviewer/0.jpg" alt="Reviewer Photo">
+                <div>
+                    <h5 id="review-name">Lorem, ipsum dolor.
+                    </h5>
+                    <span id="review-star" style="color: var(--orange)">★ 5
+                    </span>
+                </div>
+            </div>
+            <div class="dots">
+                <!-- <a class="dot"></a>
+                <a class="dot"></a>
+                <a class="dot"></a>
+                <a class="dot"></a>
+                <a class="dot"></a>
+                <a class="dot"></a> -->
+            </div>
+            <div class="arrow"><a onclick="prevReview()"><i class="fas fa-chevron-left"></i></a><a
+                    onclick="nextReview()"><i class="fas fa-chevron-right"></i></a></div>
+        </blockquote>
+        <!-- <div class="screenshots">
+            <img src="img/Screenshots/0.png" alt="">
+            <img src="img/Screenshots/1.png" alt="">
+            <img src="img/Screenshots/2.png" alt="">
+            <img src="img/Screenshots/3.png" alt="">
+            <img src="img/Screenshots/4.png" alt="">
+            <img src="img/Screenshots/5.png" alt="">
+        </div> -->
+    </section>
+    <div id="overlay" class="overlay">
+        <div class="pop-close" onclick="document.getElementById('overlay').classList.remove('show')">
+        </div>
+        <form method="POST">
+            <label for="username">氏名</label>
+            <input type="text" name="username" id="username">
+            <label for="email">Eメール</label>
+            <input type="email" name="email" id="email">
+            <label for="message">お問合わせ内容</label>
+            <textarea name="message" id="message" cols="30" rows="4"></textarea>
+            <br><br>
+            <button type="submit" name="submit" id="submit">送信</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

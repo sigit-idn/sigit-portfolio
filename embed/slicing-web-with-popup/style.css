@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #F3F4F5;
+    font-family: Helvetica, sans-serif;
+    padding: 0 10px;
+}
+
+.container {
+    max-width: 777px;
+    margin: auto;
+    margin-top: calc(32px - 56px);
+
+}
+
+.content>h1 {
+    padding: 56px 24px 30px;
+    font-size: 1.8rem;
+}
+
+.item {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 22px;
+    padding-left: 26px;
+    border-radius: 6px;
+    margin-top: 11px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.item:hover {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.selected {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.3);
+    transition: all .5s ease;
+    background-color: #157EFB;
+}
+
+.selected * {
+    color: #fff;
+}
+
+p:nth-child(2) {
+    margin-left: 36px;
+    display: inline;
+    flex: 550px;
+}
+
+.item p:first-child,
+.item p:last-child {
+    opacity: 50%;
+    display: inline;
+}
+
+.item p:last-child {
+    margin-right: 0;
+}
+
+.plus-button {
+    background-color: #157EFB;
+    width: 48px;
+    height: 48px;
+    display: block;
+    border-radius: 50%;
+    position: fixed;
+    right: 27px;
+    bottom: 20px;
+    transition: all .3s ease;
+    z-index: 1;
+}
+
+.cross {
+    width: 48px;
+    height: 48px;
+    transition: all .3s ease;
+}
+
+.plus-button span {
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.plus-button span:first-child {
+    width: 25px;
+    height: 2px;
+}
+
+.plus-button span:last-child {
+    height: 25px;
+    width: 2px;
+}
+
+.plus-button p {
+    display: none;
+}
+
+.close {
+    background-color: #DC143C !important;
+    transition: all .3s ease;
+}
+
+.close .cross {
+    transform: rotate(-45deg)
+}
+
+.plus-button:hover {
+    transform: scale(1.1);
+}
+
+
+.overlay {
+    height: 100vh;
+    width: 100vw;
+    background-color: #157dfb62;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    /* transform: scale(0); */
+    opacity: 0;
+    transition: all .5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+    padding: 0 5px;
+}
+
+.show {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    visibility: visible;
+    /* transform: scale(1); */
+}
+
+.overlay form {
+    display: block;
+    position: relative;
+    max-width: 700px;
+    background-color: #fff;
+    transform: scale(0);
+    transition: all .5s ease;
+    border-radius: 20px;
+    padding: 20px 11vw 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.overlay form * {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.overlay form label {
+    margin: 10px 0;
+}
+
+.overlay form textarea {
+    border-radius: 5px;
+    border: 1.5px solid #dadada;
+}
+
+.overlay form textarea:focus {
+    border: 1.5px solid #157efb;
+}
+
+.overlay h1 {
+    display: none;
+}
+
+.overlay p {
+    color: #dadada;
+    text-align: center;
+}
+
+.overlay form input {
+    border-bottom: 1.5px solid #dadada;
+    transition: all .3s ease;
+}
+
+.overlay form input::placeholder {
+    font-size: 1rem;
+    text-align: right;
+}
+
+.placeholder {
+    position: absolute;
+    text-align: right;
+    opacity: 50%;
+    right: 10px;
+    bottom: 0;
+    cursor: text;
+}
+
+.overlay form input:focus {
+    border-bottom: 1.5px solid #157efb;
+}
+
+.overlay button {
+    color: #fff;
+    background-color: #157EFB;
+    width: 300px;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px #157dfb85;
+    transition: all .3s ease;
+}
+
+.overlay button:hover {
+    box-shadow: 0 10px 10px #157dfb85;
+}
+
+.show form {
+    transform: scale(1);
+}
+
+@media (max-width: 767.98px) {
+    .content>h1 {
+        padding: 30px 10px 10px;
+    }
+
+    .item {
+        display: grid;
+        grid-template-areas:
+            'name amount'
+            'date amount';
+        row-gap: 3px;
+        padding: 15px;
+    }
+
+    .item>p:first-child {
+        grid-area: date;
+    }
+
+    .item>p:nth-child(2) {
+        grid-area: name;
+        margin-left: 0;
+    }
+
+    .item>p:last-child {
+        grid-area: amount;
+        align-self: center;
+        opacity: 1;
+    }
+
+    .overlay form {
+        width: 95vw;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: center;
+        height: max-content;
+    }
+
+    .overlay h1 {
+        display: inherit;
+        font-size: 2rem;
+    }
+
+    .plus-button {
+        color: #fff;
+        background-color: #157EFB;
+        width: 90vw;
+        right: 5vw;
+        border-radius: 10px;
+        box-shadow: 0 8px 10px #157dfb85;
+        transition: all .3s ease;
+        text-decoration: none;
+    }
+
+    .plus-button p {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .plus-button:hover {
+        box-shadow: 0 10px 10px #868b9285;
+        transform: scale(1);
+    }
+
+    .plus-button p {
+        display: inherit;
+        margin: auto;
+        text-align: center;
+        font-size: 1.2rem;
+        width: max-content;
+
+    }
+
+    .plus-button .cross {
+        display: none;
+    }
+}
+
+@media (min-width: 767.98px) {
+    .plus-button {
+        box-shadow: none !important;
+    }
+}
